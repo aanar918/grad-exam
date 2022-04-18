@@ -22,7 +22,7 @@ function BookModal(props) {
 			isbn: e.target[3].value,
 			published: e.target[4].value,
 		};
-
+		
 		fetch(`http://18.141.140.1:3000/api/update-book/${props.data._id}`, {
 			method: "PUT",
 			mode: "cors",

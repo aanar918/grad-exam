@@ -6,6 +6,10 @@ const ListSchema = new Schema({
 		type: String,
 		required: [true, "Enter text !"],
 	},
+	editing: {
+		type: Boolean,
+		default: false,
+	},
 });
 
 const List = mongoose.model("list", ListSchema);

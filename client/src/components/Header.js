@@ -4,7 +4,7 @@ function Header(props) {
 	return (
 		<>
 			<div>My todo list</div>
-			<div>/{props.count}</div>
+			<div>{props.toggled}/{props.count}</div>
 		</>
 	);
 }

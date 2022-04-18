@@ -9,7 +9,9 @@ import Header from "../components/Header";
 
 function Main() {
 	const [changed, setChanged] = useState(false);
+	const [toggled, setToggled] = useState(false);
 	const [list, setList] = useState([]);
+	const [editing, setEditing] = useState(false);
 
 	useEffect(() => {
 		fetch("http://18.141.140.1:3000/api/lists", {
@@ -31,8 +33,17 @@ function Main() {
 
 	return (
 		<Container className="d-flex flex-column align-items-center justify-content-center">
-			<Header count={list.length}/>
-			<List changed={changed} setChange={setChanged} data={list}/>
+			<Header count={list.length} toggled={toggled} />
+			<List
+				changed={changed}
+				setChange={setChanged}
+				data={list}
+				count={list.length}
+				editing={editing}
+				setEditing={setEditing}
+				// toggled={props.toggled}
+				// setToggle={setToggled}
+			/>
 			<CreateInput setChange={setChanged} />
 		</Container>
 	);

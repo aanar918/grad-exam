@@ -60,6 +60,11 @@ const updateList = (req, res, next) => {
 	});
 };
 
+const activateList = (req, res, next) => {
+	const id = req.params.id;
+	List.updateOne({ _id: id }, { editing: true });
+};
+
 const deleteList = (req, res, next) => {
 	const id = req.params.id;
 	List.findOneAndDelete({ _id: id })
@@ -77,4 +82,5 @@ module.exports = {
 	updateList,
 	deleteList,
 	createList,
+	activateList,
 };

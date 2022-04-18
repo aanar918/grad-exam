@@ -34,10 +34,6 @@ function CreateInput(props) {
 			<Button
 				variant="primary"
 				type="submit"
-				// onClick={() => {
-				// 	props.setChange(!props.change);
-				// 	props.setHide(false);
-				// }}
 			>
 				Add Task
 			</Button>
