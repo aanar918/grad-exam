@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import BookModal from "./BookModal";
 import "../style/Buttons.css";
 
 function TriggerButton(props) {
@@ -8,27 +7,6 @@ function TriggerButton(props) {
 	let final;
 
 	switch (props.type) {
-		case "create":
-			final = (
-				<>
-					<Button
-						variant="primary"
-						onClick={() => setModalShow(true)}
-						className="add"
-					>
-						+ Add Book
-					</Button>
-					<BookModal
-						type={"create"}
-						show={modalShow}
-						setChange={props.setChange}
-						change={props.change}
-						setHide={setModalShow}
-						onHide={() => setModalShow(false)}
-					/>
-				</>
-			);
-			break;
 		case "edit":
 			final = (
 				<>
@@ -39,14 +17,6 @@ function TriggerButton(props) {
 					>
 						{/* Edit */}
 					</Button>
-					<BookModal
-						type={"edit"}
-						data={props.data}
-						show={modalShow}
-						setChange={props.setChange}
-						setHide={setModalShow}
-						onHide={() => setModalShow(false)}
-					/>
 				</>
 			);
 			break;
@@ -60,14 +30,6 @@ function TriggerButton(props) {
 					>
 						{/* Delete */}
 					</Button>
-					<BookModal
-						type={"delete"}
-						data={props.data}
-						show={modalShow}
-						setChange={props.setChange}
-						setHide={setModalShow}
-						onHide={() => setModalShow(false)}
-					/>
 				</>
 			);
 			break;

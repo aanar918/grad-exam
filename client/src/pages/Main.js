@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import BookTable from "../components/BookTable";
 import { Container } from "react-bootstrap";
 import "../style/Main.css";
 import TriggerButton from "../components/TriggerButton";
@@ -9,7 +8,7 @@ import Header from "../components/Header";
 
 function Main() {
 	const [changed, setChanged] = useState(false);
-	const [toggled, setToggled] = useState(false);
+	const [toggled, setToggled] = useState(0);
 	const [list, setList] = useState([]);
 	const [editing, setEditing] = useState(false);
 
@@ -32,19 +31,21 @@ function Main() {
 	}, [changed]);
 
 	return (
-		<Container className="d-flex flex-column align-items-center justify-content-center">
+		<Container className="d-flex flex-column align-items-center justify-content-center main">
 			<Header count={list.length} toggled={toggled} />
-			<List
-				changed={changed}
-				setChange={setChanged}
-				data={list}
-				count={list.length}
-				editing={editing}
-				setEditing={setEditing}
-				// toggled={props.toggled}
-				// setToggle={setToggled}
-			/>
-			<CreateInput setChange={setChanged} />
+			<div className="background">
+				<List
+					changed={changed}
+					setChange={setChanged}
+					data={list}
+					count={list.length}
+					editing={editing}
+					setEditing={setEditing}
+					toggled={toggled}
+					setToggle={setToggled}
+				/>
+				<CreateInput setChange={setChanged} />
+			</div>
 		</Container>
 	);
 }

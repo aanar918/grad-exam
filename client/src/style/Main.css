@@ -10,7 +10,54 @@ body {
 }
 .background {
 	padding: 1rem;
-	width: 60vw;
+	width: 20vw;
 	background: white;
 	margin-bottom: 11px;
 }
+.header{
+	/* padding: 10px; */
+
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 20vw;
+	height: 4vw;
+	background: #AF7EEB;
+	color: white;
+	font-size: 2rem;
+	font-weight: bolder;
+	margin-bottom: 20px;
+}
+.counter {
+	background-color: blueviolet;
+	text-align: center;
+	padding: 5px;
+	font-size: 1.2rem;
+	width: 3vw;
+	border-radius: 30px;
+}
+.input{
+	margin-top: 30px;
+	border-style: none !important;
+	border-bottom: 4px solid #AF7EEB !important;
+}
+.background {
+	position: relative !important;
+}
+.task {
+	position: absolute;
+	bottom: -2vh;
+	right: calc(50% - 2.5vw);
+	align-self: center;
+	background-color: #AF7EEB !important;
+	border-style: none !important;
+	text-align: center;
+	font-size: 1rem !important;
+	font-weight: bolder !important;
+	width: 6vw;
+	height: 4vh;
+}
+/* .main {
+
+	
+} */

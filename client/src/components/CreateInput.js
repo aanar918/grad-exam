@@ -2,6 +2,7 @@ import React from "react";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import "../style/Main.css";
 
 function CreateInput(props) {
 	const handleCreate = (e) => {
@@ -28,13 +29,15 @@ function CreateInput(props) {
 
 	return (
 		<Form onSubmit={handleCreate}>
-			<Form.Group className="mb-3" controlId="name">
-				<Form.Control type="text" placeholder="what's next ?" required />
+			<Form.Group className="mb-3 form" controlId="name">
+				<Form.Control
+					type="text"
+					placeholder="what's next ?"
+					required
+					className="input"
+				/>
 			</Form.Group>
-			<Button
-				variant="primary"
-				type="submit"
-			>
+			<Button variant="primary" type="submit" className="task">
 				Add Task
 			</Button>
 		</Form>

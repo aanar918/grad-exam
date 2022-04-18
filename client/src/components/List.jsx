@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import "../style/Main.css";
 
 function List(props) {
 	const [toggled, setToggled] = useState(0);
@@ -16,7 +17,7 @@ function List(props) {
 				"Content-Type": "application/json",
 			},
 		}).then(props.setChange(true));
-		// console.log(props.data[0]._id);
+		console.log(id);
 
 		// console.log(editingList);
 		// if (editingList.includes(id)) {
@@ -54,12 +55,12 @@ function List(props) {
 	};
 
 	return (
-		<ul class="list-group list-group-flush">
+		<ul className="list-group list-group-flush">
 			{props.data.map((i) =>
 				!i.editing ? (
 					<li
 						key={i._id}
-						class="list-group-item"
+						className="list-group-item"
 						toggled={toggled}
 						setToggled={setToggled}
 					>
@@ -86,7 +87,7 @@ function List(props) {
 				) : (
 					<li
 						key={i._id}
-						class="list-group-item"
+						className="list-group-item"
 						toggled={toggled}
 						setToggled={setToggled}
 					>
