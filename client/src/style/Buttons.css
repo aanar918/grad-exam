@@ -1,6 +1,7 @@
 .add,
 .edit,
-.delete {
+.delete,
+.confirm {
 	border: none !important;
 	height: 17px;
 	width: 17px;
@@ -22,4 +23,9 @@
 }
 .delete {
 	background: url("../icons/delete.svg") no-repeat !important;
+}
+.confirm {
+	/* display: flex;
+	text-align: center; */
+	/* background: url("../icons/delete.svg") no-repeat !important; */
 }
