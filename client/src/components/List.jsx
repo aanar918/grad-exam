@@ -4,33 +4,28 @@ import { Form, Button } from "react-bootstrap";
 function List(props) {
 	const [toggled, setToggled] = useState(0);
 	let editingList = [];
-    const [edit, setEdit] = useState([])
+	const [edit, setEdit] = useState([]);
 
 	const handleEdit = (id) => {
 		// e.preventDefault();
 		// const data = {};
-		// fetch(`http://18.141.140.1:3000/api/update-list/${id}`, {
-		// 	method: "PUT",
-		// 	mode: "cors",
-		// 	headers: {
-		// 		"Content-Type": "application/json",
-		// 	},
-		// 	body: JSON.stringify(data),
-		// }).then(props.setChange(true));
+		fetch(`http://18.141.140.1:3000/api/activate/${id}`, {
+			method: "GET",
+			mode: "cors",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		}).then(props.setChange(true));
 		// console.log(props.data[0]._id);
 
-		console.log(editingList);
-		if (editingList.includes(id)) {
-			editingList.filter((e) => e !== id);
-			// const index = editingList.indexOf(id);
-			// if (index !== -1) {
-			// 	editingList.splice(index, 1);
-			// }
-			props.setChange(true);
-		} else {
-			editingList.push(id);
-			props.setChange(true);
-		}
+		// console.log(editingList);
+		// if (editingList.includes(id)) {
+		// 	editingList.filter((e) => e !== id);
+		// 	props.setChange(true);
+		// } else {
+		// 	editingList.push(id);
+		// 	props.setChange(true);
+		// }
 	};
 
 	const handleDelete = (id) => {
